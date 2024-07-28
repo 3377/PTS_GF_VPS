@@ -36,7 +36,7 @@ checkDockerInstalled() {
 wgetDockerCompose() {
   # 下载docker-compose.yml文件
   echo "下载docker-compose.yml文件..."
-  wget https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/docker-compose.yml -O docker-compose.yml
+  wget https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/docker-compose.yml -O docker-compose.yml
 
   # 检查下载是否成功
   if [ $? -ne 0 ]; then
@@ -107,7 +107,7 @@ checkNetworkInstalled() {
 wgetProxyGrafanaConfig() {
   # 下载nginx的grafana反代文件
   echo "下载nginx的grafana反代文件..."
-  wget https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/nginx/grafana.conf -O grafana.conf
+  wget https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/nginx/grafana.conf -O grafana.conf
   mv grafana.conf /var/lib/docker/volumes/root_nginx/_data/conf.d/grafana.conf
   echo "grafana反代配置文件已成功下载"
 }
@@ -206,7 +206,7 @@ dockerComposeUninstallAll() {
 wgetDockerComposeExporter() {
   # 下载docker-compose-exporter.yml文件
   echo "下载docker-compose-exporter.yml文件..."
-  wget https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/docker-compose-exporter.yml -O docker-compose-exporter.yml
+  wget https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/docker-compose-exporter.yml -O docker-compose-exporter.yml
 
   # 检查下载是否成功
   if [ $? -ne 0 ]; then
@@ -247,7 +247,7 @@ dockerComposeUninstallExporter() {
 wgetDockerComposeNezha() {
   # 下载docker-compose-nezha.yml文件
   echo "下载docker-compose-nezha.yml文件..."
-  wget https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/nezha/docker-compose-nezha.yml -O docker-compose-nezha.yml
+  wget https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/nezha/docker-compose-nezha.yml -O docker-compose-nezha.yml
 
   # 检查下载是否成功
   if [ $? -ne 0 ]; then
@@ -264,7 +264,7 @@ setNezhaConfig() {
   read -p "请输入Client ID (Oauth2.ClientID): " client_id
   read -p "请输入Client Secret (Oauth2.ClientSecret): " client_secret
 
-  wget -O ./nezha/config.yaml https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/nezha/config.yaml
+  wget -O ./nezha/config.yaml https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/nezha/config.yaml
 
   # 替换config.yaml中的内容
   sed -i "s/GRPCHost: .*/GRPCHost: ${nezhaCommDomain}/" ./nezha/config.yaml
@@ -292,7 +292,7 @@ dockerComposeNezhaInstall() {
 wgetProxyNezhaConfig() {
   # 下载nginx的nezha反代文件
   echo "下载nginx的nezha反代文件..."
-  wget https://raw.githubusercontent.com/Sm1rkBoy/monitor_config/main/nginx/nezha.conf -O nezha.conf
+  wget https://raw.githubusercontent.com/3377/PTS_GF_VPS/main/nginx/nezha.conf -O nezha.conf
   mv nezha.conf /var/lib/docker/volumes/root_nginx/_data/conf.d/nezha.conf
   echo "哪吒反代配置文件已成功下载"
 }
