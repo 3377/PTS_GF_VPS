@@ -22,7 +22,7 @@ services:
   # 三网ping exporter 
   # 监听9605端口
   fping-exporter:
-    image: xiaoleizhang/fping-exporter:4.2
+    image: unixorn/fping-exporter:latest
     container_name: fping-exporter
     restart: unless-stopped
     network_mode: host
